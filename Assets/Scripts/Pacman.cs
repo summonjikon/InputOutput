@@ -14,61 +14,37 @@ public class Pacman : MonoBehaviour
     public SerialPort port = new SerialPort("COM6", 19200);
     string lastInput;
     string updatedInput;
+    bool inputGiven;
     float timer;
+    Vector2 playerPos;
+
+    private Dictionary<string, Vector2> directionMap = new Dictionary<string, Vector2>()
+    {
+        { "UP", Vector2.up },
+        { "LEFT", Vector2.left },
+        { "DOWN", Vector2.down },
+        { "RIGHT", Vector2.right},
+        { "NEAR", Vector2.zero},
+        { "FAR", Vector2.zero},
+        { "NONE", Vector2.zero}
+    };
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider = GetComponent<Collider2D>();
         movement = GetComponent<Movement>();
         port.Open();
-
-        port.ReadTimeout = 100;
     }
 
     private void Update()
     {
-        // Set the new direction based on the current input
-        if(timer > 1)
-        {
-            if (port.IsOpen == true)
-            {
-                updatedInput = port.ReadLine();
-                if (updatedInput != lastInput)
-                {
-                    lastInput = updatedInput;
-                    //up
-                    if (lastInput == "UP")
-                    {
-                        movement.SetDirection(Vector2.up);
-                    }
-                    //down
-                    else if (lastInput == "DOWN")
-                    {
-                        movement.SetDirection(Vector2.down);
-                    }
-                    //left
-                    else if (lastInput == "LEFT")
-                    {
-                        movement.SetDirection(Vector2.left);
-                    }
-                    //right
-                    else if (lastInput == "RIGHT")
-                    {
-                        movement.SetDirection(Vector2.right);
-                    }
-                    timer = 0;
-                }
-            }
-        }
-
-        else
-        {
-            timer += Time.deltaTime;
-        }
-
         // Rotate pacman to face the movement direction
         float angle = Mathf.Atan2(movement.direction.y, movement.direction.x);
         transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
+
+        timer += Time.deltaTime;
+        playerPos = gameObject.transform.position;
+        ReadInput();
     }
 
     public void ResetState()
@@ -91,6 +67,23 @@ public class Pacman : MonoBehaviour
         deathSequence.enabled = true;
         deathSequence.spriteRenderer.enabled = true;
         deathSequence.Restart();
+    }
+
+    private void ReadInput()
+    {
+        if (timer >= 0.5) return;
+        if (!port.IsOpen) return;
+
+        updatedInput = port.ReadLine();
+
+        if (updatedInput == lastInput) return;
+
+        lastInput = updatedInput;
+
+        Vector2 direction = directionMap[lastInput];
+        movement.SetDirection(direction);
+        inputGiven = true;
+        timer = 0;
     }
 
 }

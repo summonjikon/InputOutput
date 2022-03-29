@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public Text livesText;
 
+    [SerializeField]private bool peacefull;
     public int ghostMultiplier { get; private set; } = 1;
     public int score { get; private set; }
     public int lives { get; private set; }
@@ -113,13 +114,17 @@ public class GameManager : MonoBehaviour
 
     public void PowerPelletEaten(PowerPellet pellet)
     {
-        for (int i = 0; i < ghosts.Length; i++) {
-            ghosts[i].frightened.Enable(pellet.duration);
-        }
+        if (peacefull != true)
+        {
+            for (int i = 0; i < ghosts.Length; i++)
+            {
+                ghosts[i].frightened.Enable(pellet.duration);
+            }
 
-        PelletEaten(pellet);
-        CancelInvoke(nameof(ResetGhostMultiplier));
-        Invoke(nameof(ResetGhostMultiplier), pellet.duration);
+            PelletEaten(pellet);
+            CancelInvoke(nameof(ResetGhostMultiplier));
+            Invoke(nameof(ResetGhostMultiplier), pellet.duration);
+        }
     }
 
     private bool HasRemainingPellets()

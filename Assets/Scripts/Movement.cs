@@ -41,6 +41,8 @@ public class Movement : MonoBehaviour
         if (nextDirection != Vector2.zero) {
             SetDirection(nextDirection);
         }
+        if (Occupied(direction) == true) return;
+
     }
 
     private void FixedUpdate()
@@ -70,6 +72,7 @@ public class Movement : MonoBehaviour
     public bool Occupied(Vector2 direction)
     {
         // If no collider is hit then there is no obstacle in that direction
+        // If in there is a obstacle in the current direction, output = false
         RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.75f, 0f, direction, 1.5f, obstacleLayer);
         return hit.collider != null;
     }
