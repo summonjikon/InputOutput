@@ -45,7 +45,7 @@ Wat vind je niet goed aan de game?
   -   Jim Koning en Joost Robat
 
 
-15/03/2022: Vervolg onderzoek en testing van de arduino uitgevoerd met het arduino programma, ook een library gevonden die de sensor output laat geven.\
+15/03/2022: Vervolg onderzoek en testing van de arduino uitgevoerd met het arduino programma, ook een library gevonden die de sensor output laat geven.
   -   Jim Koning en Joost Robat
 
 
