@@ -89,19 +89,22 @@ Wat vind je niet goed aan de game?
 Bronnenlijst 
 
 Onderzoek over sensor:
+
 https://www.silabs.com/documents/public/application-notes/AN580.pdf
 https://www.sparkfun.com/products/12787
 
 
 
 Sensor werkend maken in Arduino:
+
 https://learn.sparkfun.com/tutorials/apds-9960-rgb-and-gesture-sensor-hookup-guide/all
 
 https://youtu.be/9SYt4MDSAro
 https://youtu.be/SD3iUnLNjY0
 https://youtu.be/9SYt4MDSAro
 
-Sensor input krijgen in Unity
+Sensor input krijgen in Unity:
+
 https://ardity.dwilches.com/ (kost geld)
 
 https://github.com/XR-lab/Eurovisie
