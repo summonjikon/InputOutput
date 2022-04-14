@@ -14,12 +14,15 @@ Er is ook gekeken naar alternatieven input devices, zoals een leap sensor, maar 
 Ook hebben we gekeken naar een joystick maar deze was niet passend.
 Wij hebben gekozen om alleen essentieel materiaal te gebruiken en later te baseren op hoe goed het project gaat of wij voor extra’s gaan.
 
+
+
 ## Tijd
 Wij hebben genoeg tijd voor het project en stellen prioriteiten op functionaliteit, met alle overige tijd die we hebben kunnen we de game tweaken en versoepelen of eventueel voor extra functies gaan.
 Het meeste prioriteit ligt bij een werkende input krijgen van de gesture sensor, wat gelukt is, nu ligt de prioriteit op het versoepelen van de game en misschien extra functies.
 Wij hadden zeker veel geld kunnen betalen voor een plugin en dan makkelijk met de input aan de slag kunnen gaan maar dat was veel geld dus we hebben ervoor gekozen om verder te zoeken en dat is uiteindelijk gelukt.
 
 ## User test met Guido van der Kort
+
 User test ging als volgt:
 Guido van der Kort werd achter de PC neergezet en heeft de game zelf uitgevogeld en gespeeld.
 Tijdens het spelen zijn de volgende vragen gesteld:
@@ -34,7 +37,13 @@ Wat vind je goed aan de game?
 Wat vind je niet goed aan de game?
   -   Game is best laggy en het word snel saai.
 
+https://user-images.githubusercontent.com/54998073/163336691-88597d69-e222-43ac-adbd-10dbbb0ba2cf.mp4
+
+https://user-images.githubusercontent.com/54998073/163336915-a73f1519-7c9a-4b20-be5f-7dbdca7dffa5.mp4
+
+
 ## Update log
+
   -   Note: log werd bijgehouden in hetzelfde document als de bronnen en grof uitgewerkte ideëen omdat dat prettiger werkte, wij kwamen er later achter dat dat in de readme moest.
 
 09/03/2022: Technisch onderzoek uitgevoerd en gedocumenteerd.
